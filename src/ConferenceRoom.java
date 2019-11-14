@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConferenceRoom {
-    private List<Event> eventList = new ArrayList<>();
+    private final List<Event> eventList = new ArrayList<>();
 
     public void addEvent(Event event) {
         if (isAvailable(event.getBeginDateTime(), event.getEndDateTime())) {
