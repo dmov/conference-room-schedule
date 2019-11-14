@@ -2,9 +2,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Event {
-    private LocalDateTime beginDateTime;
-    private LocalDateTime endDateTime;
-    private String name;
+    private final LocalDateTime beginDateTime;
+    private final LocalDateTime endDateTime;
+    private final String name;
 
     public Event(String begin, String end, String name) {
         final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
