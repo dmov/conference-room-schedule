@@ -15,22 +15,16 @@ public class ConferenceRoom {
     }
 
     private boolean isAvailable(Event event) {
-        final LocalDateTime begin = event.getBeginDateTime();
-        final LocalDateTime end = event.getEndDateTime();
-
-        if (begin.isAfter(end)) {
-            return false;
-        }
-        return eventList.stream().noneMatch(e -> isInside(e, begin, end));
+        return eventList.stream().noneMatch(e -> isInside(e, event.getBeginDateTime(), event.getEndDateTime()));
     }
 
     private boolean isInside(Event event, LocalDateTime begin, LocalDateTime end) {
         final LocalDateTime beginDateTime = event.getBeginDateTime();
         final LocalDateTime endDateTime = event.getEndDateTime();
-        return ((beginDateTime.isAfter(begin) || beginDateTime.isEqual(begin)) &&
-                (beginDateTime.isBefore(end) || beginDateTime.isEqual(end)))
+        return ((beginDateTime.isAfter(begin) || beginDateTime.isEqual(begin))
+                && (beginDateTime.isBefore(end) || beginDateTime.isEqual(end)))
                 ||
-                ((endDateTime.isAfter(begin) || endDateTime.isEqual(begin)) &&
-                        (endDateTime.isBefore(end) || endDateTime.isEqual(end)));
+                ((endDateTime.isAfter(begin) || endDateTime.isEqual(begin))
+                        && (endDateTime.isBefore(end) || endDateTime.isEqual(end)));
     }
 }

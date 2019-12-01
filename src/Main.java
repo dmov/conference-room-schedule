@@ -12,10 +12,10 @@ public class Main {
         System.out.print("Input event's name: ");
         final String eventName = in.nextLine();
 
-        System.out.print("Input event's begin date and time: ");
+        System.out.print("Input event's begin date and time (yyyy-MM-dd HH:mm): ");
         final String eventBeginTime = in.nextLine();
 
-        System.out.print("Input event's end date and time: ");
+        System.out.print("Input event's end date and time (yyyy-MM-dd HH:mm): ");
         final String eventEndTime = in.nextLine();
 
         conferenceRoom.addEvent(new Event(eventBeginTime, eventEndTime, eventName));
