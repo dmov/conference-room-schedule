@@ -8,7 +8,7 @@ public class Event {
     private final String name;
 
     public Event(String begin, String end, String name) {
-        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); // TODO: make it static field
 
         try {
             this.beginDateTime = LocalDateTime.parse(begin, dateTimeFormatter);
